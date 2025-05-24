@@ -182,11 +182,14 @@
     "versionCode": 100
   },
   "mp-weixin": {
-    "appid": "wx66186af0759f47c9",
+    "appid": "wx4a2521fce1f7eaf3",
     "setting": {
       "urlCheck": false,
       "minified": true,
-      "postcss": true
+      "postcss": true,
+      "es6": true,
+      "enhance": true,
+      "checkSiteMap": false
     },
     "optimization": {
       "subPackages": true

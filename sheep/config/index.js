@@ -5,7 +5,15 @@ const { version } = packageInfo;
 // 开发环境配置
 export let baseUrl;
 if (process.env.NODE_ENV === 'development') {
+  // #ifdef MP-WEIXIN
+  // 小程序环境需要使用完整的后端地址，不能使用代理
+  baseUrl = 'http://127.0.0.1:48080';
+  // #endif
+  
+  // #ifndef MP-WEIXIN
+  // H5环境使用环境变量（可以为空，走代理）
   baseUrl = import.meta.env.SHOPRO_DEV_BASE_URL;
+  // #endif
 } else {
   baseUrl = import.meta.env.SHOPRO_BASE_URL;
 }
